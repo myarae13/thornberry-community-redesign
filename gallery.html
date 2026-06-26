@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Photo Gallery — Thornberry Creek Community Association</title>
+<meta name="description" content="Aerials, seasonal scenes, and snapshots from around the Thornberry Creek neighborhood at Oneida near Green Bay, Wisconsin." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+
+<div class="utility">
+  <div class="wrap">
+    <span class="loc">Oneida · Green Bay, Wisconsin</span>
+    <nav>
+      <a href="contacts.html">Important Contacts</a>
+      <a href="guiding-principles.html">Guiding Principles</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="Thornberry Creek Community Association" class="logo-img" />
+    </a>
+    <nav class="menu" id="menu">
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="contact.html" class="btn btn-pine">Share a Photo</a>
+      <button class="menu-toggle" id="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <img class="bg" src="assets/aerial-lakes.jpg" alt="Aerial of the lakes and fairways" />
+  <div class="wrap">
+    <span class="eyebrow">A Look Around</span>
+    <h1>Photo Gallery</h1>
+    <hr class="rule center" />
+    <p>Aerials, seasonal scenes, and snapshots from gatherings around Thornberry Creek.</p>
+  </div>
+</section>
+
+<div class="crumb">
+  <div class="wrap">
+    <a href="index.html">Home</a><span class="sep">/</span><span class="here">Photo Gallery</span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="band bg-cream">
+  <div class="wrap">
+    <div class="gal-filters reveal">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="aerial">Aerials</button>
+      <button data-filter="seasons">Seasons</button>
+      <button data-filter="homes">Homes &amp; Streets</button>
+      <button data-filter="community">Community</button>
+    </div>
+
+    <div class="gal-grid reveal" id="grid">
+      <figure class="gtile big" data-cat="aerial"><img src="assets/aerial-lakes.jpg" alt="Aerial view of the lakes and fairways" /><figcaption>On the Fairways</figcaption></figure>
+      <figure class="gtile tall" data-cat="seasons"><img src="assets/fall-foliage.jpg" alt="Brilliant fall foliage" /><figcaption>Peak Autumn Color</figcaption></figure>
+      <figure class="gtile" data-cat="community"><img src="assets/residents.jpg" alt="Neighbors gathered together" /><figcaption>Neighbors Gathered</figcaption></figure>
+      <figure class="gtile" data-cat="homes"><img src="assets/red-tree-home.jpg" alt="Brick home framed by a red maple" /><figcaption>Room to Call Home</figcaption></figure>
+      <figure class="gtile wide" data-cat="homes"><img src="assets/aerial-street.jpg" alt="Tree-lined streets" /><figcaption>Tree-Lined Streets</figcaption></figure>
+      <figure class="gtile" data-cat="seasons"><img src="assets/red-tree-home.jpg" alt="Red maple in fall" /><figcaption>A Maple Turns</figcaption></figure>
+      <figure class="gtile wide" data-cat="aerial"><img src="assets/aerial-lakes.jpg" alt="Aerial of the community and course" /><figcaption>Wrapped in Nature</figcaption></figure>
+      <figure class="gtile" data-cat="community"><img src="assets/residents.jpg" alt="A community event" /><figcaption>An Active Community</figcaption></figure>
+      <figure class="gtile tall" data-cat="homes"><img src="assets/aerial-street.jpg" alt="Quiet neighborhood street" /><figcaption>Quiet &amp; Walkable</figcaption></figure>
+      <figure class="gtile" data-cat="seasons"><img src="assets/fall-foliage.jpg" alt="Fall color along the creek" /><figcaption>Creekside in Fall</figcaption></figure>
+      <figure class="gtile" data-cat="aerial"><img src="assets/aerial-street.jpg" alt="Aerial of streets and homes" /><figcaption>From Above</figcaption></figure>
+      <figure class="gtile" data-cat="community"><img src="assets/red-tree-home.jpg" alt="A welcoming home" /><figcaption>Welcome Home</figcaption></figure>
+    </div>
+
+    <div class="callout reveal" style="max-width:760px;margin:2.8rem auto 0">
+      <p><strong>Have a great shot of the neighborhood?</strong> We'd love to feature it. Send your seasonal photos and event snapshots to <a href="mailto:info@thornberrycreekcommunity.com" style="color:var(--pine);font-weight:600">info@thornberrycreekcommunity.com</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="band cta-strip">
+  <div class="wrap reveal">
+    <span class="eyebrow">See It in Person</span>
+    <h2>Come experience Thornberry Creek.</h2>
+    <hr class="rule center" />
+    <p>Photos only go so far. Join us at an event or reach out to learn more about life in the neighborhood.</p>
+    <div class="hero-cta">
+      <a href="events.html" class="btn btn-gold">See Upcoming Events</a>
+      <a href="about.html" class="btn btn-ghost">About the Community</a>
+    </div>
+  </div>
+</section>
+
+<div class="streetscape" aria-hidden="true">
+  <img src="assets/footer-streetscape.png" alt="Illustration of Thornberry Creek homes along the golf course" />
+</div>
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="index.html" class="brand">
+          <span class="mark">T</span>
+          <span><b style="color:#fff">Thornberry Creek</b><span>Community Association</span></span>
+        </a>
+        <p class="about">A volunteer organization of residents promoting a safe and beautiful place to live, with a spirit of community.</p>
+        <div class="contact">
+          <a href="mailto:info@thornberrycreekcommunity.com">info@thornberrycreekcommunity.com</a><br/>
+          Oneida · Green Bay, Wisconsin
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="events.html">Events Calendar</a></li>
+          <li><a href="news.html">News &amp; Announcements</a></li>
+          <li><a href="about.html">About the Association</a></li>
+          <li><a href="gallery.html">Photo Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Residents</h5>
+        <ul>
+          <li><a href="guiding-principles.html">Guiding Principles</a></li>
+          <li><a href="contacts.html">Important Contacts</a></li>
+          <li><a href="about.html">About the Association</a></li>
+          <li><a href="contact.html">Get Involved</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="https://www.facebook.com/groups/ThornberryCreekHOA">Facebook Group</a></li>
+          <li><a href="mailto:info@thornberrycreekcommunity.com">Email Us</a></li>
+          <li><a href="contact.html">Newsletter</a></li>
+          <li><a href="#">STROLL Magazine</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Thornberry Creek Community Association. All rights reserved.</span>
+      <span>Promoting a safe and beautiful place to live, with a spirit of community.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle=document.getElementById('toggle'),menu=document.getElementById('menu');
+  toggle.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Gallery filtering
+  const filterBtns=document.querySelectorAll('.gal-filters button');
+  const tiles=document.querySelectorAll('#grid .gtile');
+  filterBtns.forEach(btn=>btn.addEventListener('click',()=>{
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    tiles.forEach(t=>{
+      t.style.display=(f==='all'||t.dataset.cat===f)?'':'none';
+    });
+  }));
+</script>
+</body>
+</html>

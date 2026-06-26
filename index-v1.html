@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thornberry Creek Community Association — Live Where the Fairway Meets Home</title>
+<meta name="description" content="A family-oriented community of 200+ single-family homes wrapped around the Thornberry Creek at Oneida Golf Course, minutes from Green Bay, Wisconsin." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* palette — grounded in the site's charcoal/white + the course's natural greens */
+    --ink:#1f2420;
+    --ink-soft:#4a524c;
+    --pine:#2f5d3f;          /* brand green, pulled from the fairways */
+    --pine-deep:#1f3a2e;
+    --gold:#c8a24a;          /* restrained hairline accent for the upscale feel */
+    --cream:#faf8f3;
+    --cream-2:#f2efe7;
+    --line:#e3ddd1;
+    --white:#ffffff;
+
+    --maxw:1180px;
+    --pad:clamp(20px,5vw,64px);
+    --r:14px;
+
+    --serif:'Fraunces',Georgia,serif;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{
+    font-family:var(--sans);font-size:.74rem;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--pine);
+    display:inline-flex;align-items:center;gap:.6em;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold)}
+
+  /* ---------- NAV ---------- */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.4s ease}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:.7rem;color:#fff;transition:color .4s}
+  .brand .mark{
+    width:38px;height:38px;border:1.5px solid currentColor;border-radius:50%;
+    display:grid;place-items:center;font-family:var(--serif);font-size:1.05rem;font-weight:600;
+  }
+  .brand b{font-family:var(--serif);font-weight:500;font-size:1.08rem;letter-spacing:.01em;line-height:1.05}
+  .brand span{display:block;font-family:var(--sans);font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+  .menu{display:flex;gap:2rem;align-items:center}
+  .menu a{color:#fff;font-size:.86rem;font-weight:500;letter-spacing:.01em;opacity:.92;transition:.25s}
+  .menu a:hover{opacity:1}
+  .btn{
+    font-family:var(--sans);font-size:.84rem;font-weight:600;letter-spacing:.02em;
+    padding:.7em 1.4em;border-radius:50px;display:inline-flex;align-items:center;gap:.5em;
+    cursor:pointer;border:1px solid transparent;transition:.28s ease;white-space:nowrap;
+  }
+  .btn-gold{background:var(--gold);color:#2a2410}
+  .btn-gold:hover{background:#d8b257;transform:translateY(-2px)}
+  .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
+  .btn-pine{background:var(--pine);color:#fff}
+  .btn-pine:hover{background:var(--pine-deep);transform:translateY(-2px)}
+  .btn-outline{border-color:var(--line);color:var(--ink)}
+  .btn-outline:hover{border-color:var(--pine);color:var(--pine)}
+
+  header.scrolled{background:var(--cream);box-shadow:0 1px 0 var(--line)}
+  header.scrolled .nav{height:66px}
+  header.scrolled .brand,header.scrolled .menu a{color:var(--ink)}
+  header.scrolled .menu a{opacity:.75}
+  header.scrolled .menu a:hover{opacity:1;color:var(--pine)}
+  header.scrolled .btn-ghost{border-color:var(--line);color:var(--ink)}
+  header.scrolled .btn-ghost:hover{border-color:var(--pine);color:var(--pine)}
+  .menu-toggle{display:none}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:-2}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;animation:slowzoom 22s ease-out forwards}
+  @keyframes slowzoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,28,22,.55) 0%,rgba(20,28,22,.12) 35%,rgba(20,28,22,.45) 72%,rgba(20,28,22,.86) 100%);
+  }
+  .hero-inner{width:100%;padding-bottom:clamp(48px,8vh,96px);padding-top:120px}
+  .hero h1{font-size:clamp(2.7rem,6.4vw,5.2rem);max-width:14ch;margin:.5rem 0 1.1rem;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+  .hero p.lead{font-size:clamp(1rem,1.6vw,1.22rem);max-width:46ch;color:rgba(255,255,255,.92);font-weight:400}
+  .hero-cta{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem}
+  .hero .eyebrow{color:#fff}
+  .hero .eyebrow::before{background:var(--gold)}
+  .scroll-hint{
+    position:absolute;right:var(--pad);bottom:clamp(48px,8vh,96px);
+    writing-mode:vertical-rl;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;
+    opacity:.7;display:flex;align-items:center;gap:1rem;
+  }
+  .scroll-hint::after{content:"";width:1px;height:46px;background:#fff;opacity:.6}
+
+  /* ---------- STAT BAR ---------- */
+  .stats{background:var(--pine-deep);color:#fff}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12)}
+  .stat{background:var(--pine-deep);padding:2.2rem 1.4rem;text-align:center}
+  .stat b{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.5rem);font-weight:500;display:block;line-height:1}
+  .stat span{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-top:.6rem;display:block}
+  .stat b em{color:var(--gold);font-style:normal}
+
+  /* ---------- SECTION SHELL ---------- */
+  section.band{padding:clamp(72px,11vh,140px) 0}
+  .lede{font-size:clamp(1.7rem,3.4vw,2.9rem);max-width:20ch}
+  .reveal{opacity:0;transform:translateY(26px);transition:.9s cubic-bezier(.16,.84,.44,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- WELCOME (split) ---------- */
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+  .split .copy h2{font-size:clamp(1.9rem,3.6vw,3rem);margin:1rem 0 1.2rem}
+  .split .copy p{color:var(--ink-soft);font-size:1.04rem;margin-bottom:1.1rem;max-width:48ch}
+  .split .media{position:relative}
+  .split .media img{border-radius:var(--r);width:100%;height:clamp(360px,52vh,560px);object-fit:cover;box-shadow:0 30px 60px -28px rgba(31,58,46,.45)}
+  .split .media .tag{
+    position:absolute;left:-18px;bottom:28px;background:var(--white);color:var(--ink);
+    padding:1rem 1.3rem;border-radius:12px;box-shadow:0 18px 40px -18px rgba(0,0,0,.4);
+    border-left:3px solid var(--gold);max-width:230px;
+  }
+  .split .media .tag b{font-family:var(--serif);font-size:1.1rem;display:block}
+  .split .media .tag span{font-size:.82rem;color:var(--ink-soft)}
+  .signature{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--pine);margin-top:1.4rem}
+
+  /* ---------- FEATURES ---------- */
+  .features{background:var(--cream-2)}
+  .feat-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:3.2rem}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:2rem 1.7rem;transition:.35s ease}
+  .card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(31,58,46,.4);border-color:transparent}
+  .card .ico{width:46px;height:46px;border-radius:11px;background:rgba(47,93,63,.1);color:var(--pine);display:grid;place-items:center;margin-bottom:1.2rem}
+  .card h3{font-size:1.22rem;margin-bottom:.5rem}
+  .card p{color:var(--ink-soft);font-size:.95rem}
+
+  /* ---------- EVENTS ---------- */
+  .events .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:1.4rem}
+  .event-feature{
+    position:relative;border-radius:var(--r);overflow:hidden;min-height:420px;
+    display:flex;align-items:flex-end;color:#fff;
+  }
+  .event-feature img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .event-feature::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,58,46,.1),rgba(31,58,46,.92))}
+  .event-feature .ef-body{position:relative;padding:2.4rem;z-index:1}
+  .event-feature .chip{background:var(--gold);color:#2a2410;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.45em 1em;border-radius:50px;display:inline-block;margin-bottom:1rem}
+  .event-feature h3{font-size:clamp(1.7rem,3vw,2.4rem)}
+  .event-feature .meta{margin-top:.8rem;font-size:.98rem;opacity:.92;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
+  .event-side{display:flex;flex-direction:column;gap:1.4rem}
+  .event-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1.8rem;flex:1;display:flex;gap:1.3rem;align-items:flex-start}
+  .event-card .date{text-align:center;flex-shrink:0;width:62px}
+  .event-card .date b{font-family:var(--serif);font-size:1.9rem;display:block;line-height:1;color:var(--pine)}
+  .event-card .date span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .event-card h4{font-family:var(--serif);font-weight:500;font-size:1.2rem;margin-bottom:.3rem}
+  .event-card p{font-size:.9rem;color:var(--ink-soft)}
+
+  /* ---------- GALLERY ---------- */
+  .gallery{background:var(--pine-deep);color:#fff}
+  .gallery .feat-head h2,.gallery .lede{color:#fff}
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+  .gal-grid figure{overflow:hidden;border-radius:12px;position:relative}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+  .gal-grid figure:hover img{transform:scale(1.07)}
+  .gal-grid .big{grid-column:span 2;grid-row:span 2}
+  .gal-grid .tall{grid-row:span 2}
+
+  /* ---------- CTA ---------- */
+  .cta-band{background:linear-gradient(120deg,var(--pine) 0%,var(--pine-deep) 100%);color:#fff;text-align:center}
+  .cta-band h2{font-size:clamp(2rem,4vw,3.2rem);max-width:18ch;margin:1rem auto 1.2rem}
+  .cta-band p{max-width:50ch;margin:0 auto 2rem;color:rgba(255,255,255,.86);font-size:1.05rem}
+  .cta-band .hero-cta{justify-content:center}
+  .cta-band .eyebrow{color:#fff}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:rgba(255,255,255,.7);padding:clamp(56px,8vh,84px) 0 32px}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.4rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12)}
+  footer .brand{color:#fff;margin-bottom:1.1rem}
+  footer p.about{font-size:.92rem;max-width:34ch}
+  footer h5{color:#fff;font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.1rem}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:.7rem}
+  footer ul a{font-size:.92rem;transition:.25s}
+  footer ul a:hover{color:var(--gold)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.6rem;font-size:.82rem}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:980px){
+    .grid4,.gal-grid{grid-template-columns:repeat(2,1fr)}
+    .split,.events .wrap,.foot-top{grid-template-columns:1fr}
+    .events .wrap{gap:1.4rem}
+    .stats .wrap{grid-template-columns:repeat(2,1fr)}
+    .split .media{order:-1}
+    .foot-top{gap:2rem}
+  }
+  @media(max-width:680px){
+    .menu{
+      position:fixed;inset:0 0 0 auto;width:min(80vw,320px);background:var(--cream);
+      flex-direction:column;justify-content:center;padding:2rem;gap:1.6rem;
+      transform:translateX(100%);transition:.4s ease;box-shadow:-20px 0 60px rgba(0,0,0,.2);
+    }
+    .menu.open{transform:none}
+    .menu a{color:var(--ink);font-size:1.05rem}
+    .menu .btn-ghost{border-color:var(--line);color:var(--ink)}
+    .menu-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;z-index:60;padding:6px}
+    .menu-toggle span{width:26px;height:2px;background:#fff;transition:.3s}
+    header.scrolled .menu-toggle span{background:var(--ink)}
+    .grid4,.gal-grid{grid-template-columns:1fr}
+    .gal-grid{grid-auto-rows:240px}
+    .gal-grid .big{grid-column:span 1;grid-row:span 1}
+    .scroll-hint{display:none}
+    .split .media .tag{left:12px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <span class="mark">T</span>
+      <span><b>Thornberry Creek</b><span>Community Association</span></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#welcome">The Community</a>
+      <a href="#life">Why Live Here</a>
+      <a href="#events">Events</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+    </nav>
+    <button class="menu-toggle" id="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"><img src="assets/aerial-lakes.jpg" alt="Aerial view of Thornberry Creek community and golf course" /></div>
+  <div class="wrap hero-inner reveal in">
+    <span class="eyebrow">Green Bay · Oneida, Wisconsin</span>
+    <h1>Live where the fairway meets home.</h1>
+    <p class="lead">A close-knit neighborhood of 200+ single-family homes set along the lakes and fairways of Thornberry Creek at Oneida — minutes from Green Bay, a world away from ordinary.</p>
+    <div class="hero-cta">
+      <a href="#welcome" class="btn btn-gold">Explore the Community →</a>
+      <a href="#events" class="btn btn-ghost">Upcoming Events</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat reveal"><b>200<em>+</em></b><span>Single-Family Homes</span></div>
+    <div class="stat reveal"><b>18</b><span>Holes At The Door</span></div>
+    <div class="stat reveal"><b>4</b><span>Seasons Of Beauty</span></div>
+    <div class="stat reveal"><b>10<em>min</em></b><span>To Green Bay</span></div>
+  </div>
+</div>
+
+<!-- WELCOME -->
+<section class="band" id="welcome">
+  <div class="wrap split">
+    <div class="copy reveal">
+      <span class="eyebrow">Welcome Home</span>
+      <h2>A neighborhood with a spirit of community.</h2>
+      <p>Thornberry Creek Estates is a family-oriented community wrapped around one of Wisconsin's most celebrated golf courses. Tree-lined streets, manicured greens, and quiet lakes make it one of the most sought-after addresses just outside Green Bay.</p>
+      <p>Behind it all is the Thornberry Creek Community Association — a volunteer organization of residents dedicated to keeping this a safe, beautiful, and welcoming place to call home.</p>
+      <p class="signature">"Promoting a safe and beautiful place to live, with a spirit of community."</p>
+      <a href="#contact" class="btn btn-pine" style="margin-top:1rem">Meet the Association →</a>
+    </div>
+    <div class="media reveal">
+      <img src="assets/aerial-street.jpg" alt="Homes lining the curved streets along the golf course" />
+      <div class="tag"><b>On the course</b><span>Homes set directly along the Thornberry Creek fairways</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY LIVE HERE -->
+<section class="band features" id="life">
+  <div class="wrap">
+    <div class="feat-head reveal">
+      <div>
+        <span class="eyebrow">Why Live Here</span>
+        <h2 class="lede" style="margin-top:1rem">Everything a place to call home should be.</h2>
+      </div>
+      <p style="max-width:34ch;color:var(--ink-soft)">From golf-course views to neighbors who feel like family — the details that make Thornberry Creek special.</p>
+    </div>
+    <div class="grid4">
+      <div class="card reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>On the Fairways</h3>
+        <p>Homes set along the lakes and greens of Thornberry Creek at Oneida — golf and nature at your doorstep.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v6m0 0a4 4 0 0 0-4 4H4m8-4a4 4 0 0 1 4 4h4M12 12v10"/></svg></div>
+        <h3>Four-Season Beauty</h3>
+        <p>Brilliant fall color, lush summers, and quiet snow-lined streets — a landscape that changes with the seasons.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.4 1.4-4.4 3.5-5.2"/></svg></div>
+        <h3>An Active Community</h3>
+        <p>Neighborhood parties, seasonal gatherings, and a Facebook group that keeps everyone connected year-round.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Safe &amp; Well-Kept</h3>
+        <p>A resident-led association looks after the standards, beautification, and shared spirit that protect your investment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="band events" id="events">
+  <div class="wrap" style="margin-bottom:3rem">
+    <div class="feat-head reveal" style="margin-bottom:0">
+      <div>
+        <span class="eyebrow">What's Happening</span>
+        <h2 class="lede" style="margin-top:1rem">Community life, all year long.</h2>
+      </div>
+      <a href="#contact" class="btn btn-outline">See Full Calendar →</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="event-feature reveal">
+      <img src="assets/residents.jpg" alt="Residents gathering at a community event" />
+      <div class="ef-body">
+        <span class="chip">Featured · This Week</span>
+        <h3>Family Flamingo Party</h3>
+        <div class="meta">
+          <span>🗓 June 24 · 5:00–7:30 PM</span>
+          <span>📍 Kings Point cul-de-sac</span>
+        </div>
+        <p style="margin-top:1rem;max-width:42ch;opacity:.9">Bring the family for an evening of food, fun, and neighbors. All Thornberry Creek residents welcome.</p>
+      </div>
+    </div>
+    <div class="event-side">
+      <div class="event-card reveal">
+        <div class="date"><b>12</b><span>Aug</span></div>
+        <div>
+          <h4>Community Meeting</h4>
+          <p>The next TCCA gathering at the Thornberry Creek at Oneida Clubhouse. Come share ideas and meet your board.</p>
+        </div>
+      </div>
+      <div class="event-card reveal">
+        <div class="date"><b>♻</b><span>Year-round</span></div>
+        <div>
+          <h4>Stay in the Loop</h4>
+          <p>Join the TCCA Facebook group for day-to-day updates, photos, and neighborly conversation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="band gallery" id="gallery">
+  <div class="wrap">
+    <div class="feat-head reveal">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">Around the Neighborhood</span>
+        <h2 class="lede" style="margin-top:1rem">A place that's beautiful in every light.</h2>
+      </div>
+    </div>
+    <div class="gal-grid reveal">
+      <figure class="big"><img src="assets/aerial-lakes.jpg" alt="Aerial of lakes and fairways" /></figure>
+      <figure class="tall"><img src="assets/red-tree-home.jpg" alt="Brick home framed by a brilliant red maple" /></figure>
+      <figure><img src="assets/fall-foliage.jpg" alt="Fall foliage along the streets" /></figure>
+      <figure><img src="assets/residents.jpg" alt="Neighbors gathered together" /></figure>
+      <figure class="tall"><img src="assets/aerial-street.jpg" alt="Curved streets along the golf course" /></figure>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="band cta-band" id="contact">
+  <div class="wrap reveal">
+    <span class="eyebrow">Get in Touch</span>
+    <h2>Have a question about the community?</h2>
+    <p>Whether you're a resident, a prospective neighbor, or just curious about life at Thornberry Creek — the Association is here to help.</p>
+    <div class="hero-cta">
+      <a href="mailto:info@thornberrycreekcommunity.com" class="btn btn-gold">info@thornberrycreekcommunity.com</a>
+      <a href="https://www.facebook.com/groups/ThornberryCreekHOA" class="btn btn-ghost">Join the Facebook Group</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="#top" class="brand">
+          <span class="mark">T</span>
+          <span><b>Thornberry Creek</b><span>Community Association</span></span>
+        </a>
+        <p class="about">A volunteer organization of residents promoting a safe and beautiful place to live, with a spirit of community — near Green Bay, Wisconsin.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#welcome">The Community</a></li>
+          <li><a href="#life">Why Live Here</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Residents</h5>
+        <ul>
+          <li><a href="#">Important Contacts</a></li>
+          <li><a href="#">Guiding Principles</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Photos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="mailto:info@thornberrycreekcommunity.com">Email the Association</a></li>
+          <li><a href="https://www.facebook.com/groups/ThornberryCreekHOA">Facebook Group</a></li>
+          <li><a href="#">STROLL Magazine</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Thornberry Creek Community Association. All rights reserved.</span>
+      <span>Green Bay · Oneida, Wisconsin</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // sticky nav
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>40);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  // mobile menu
+  const toggle=document.getElementById('toggle'),menu=document.getElementById('menu');
+  toggle.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
