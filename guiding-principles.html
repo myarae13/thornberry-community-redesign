@@ -5,6 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Guiding Principles | Thornberry Creek Community Association</title>
 <meta name="description" content="The shared standards and guiding principles that protect the character of Thornberry Creek and every resident's investment." />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<meta name="theme-color" content="#2f5d3f" />
+<link rel="canonical" href="https://thornberry-community-redesign.vercel.app/guiding-principles.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Thornberry Creek Community Association" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content="https://thornberry-community-redesign.vercel.app/guiding-principles.html" />
+<meta property="og:title" content="Guiding Principles | Thornberry Creek Community Association" />
+<meta property="og:description" content="The shared standards and guiding principles that protect the character of Thornberry Creek and every resident's investment." />
+<meta property="og:image" content="https://thornberry-community-redesign.vercel.app/assets/aerial-lakes.jpg" />
+<meta property="og:image:width" content="1250" />
+<meta property="og:image:height" content="663" />
+<meta property="og:image:alt" content="Aerial view of the Thornberry Creek neighborhood, its lakes, and the golf course fairways" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Guiding Principles | Thornberry Creek Community Association" />
+<meta name="twitter:description" content="The shared standards and guiding principles that protect the character of Thornberry Creek and every resident's investment." />
+<meta name="twitter:image" content="https://thornberry-community-redesign.vercel.app/assets/aerial-lakes.jpg" />
+<meta name="twitter:image:alt" content="Aerial view of the Thornberry Creek neighborhood, its lakes, and the golf course fairways" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -36,7 +56,7 @@
     </nav>
     <div class="header-cta">
       <a href="mailto:info@thornberrycreekcommunity.com" class="btn btn-pine">Contact Us</a>
-      <button class="menu-toggle" id="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="menu-toggle" id="toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
@@ -220,7 +240,7 @@
         </div>
       </div>
       <div>
-        <h5>Explore</h5>
+        <h2 class="foot-h">Explore</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="events.html">Events</a></li>
@@ -229,14 +249,14 @@
         </ul>
       </div>
       <div>
-        <h5>Residents</h5>
+        <h2 class="foot-h">Residents</h2>
         <ul>
           <li><a href="guiding-principles.html">Guiding Principles</a></li>
           <li><a href="important-contacts.html">Important Contacts</a></li>
         </ul>
       </div>
       <div>
-        <h5>Connect</h5>
+        <h2 class="foot-h">Connect</h2>
         <ul>
           <li><a href="https://www.facebook.com/groups/ThornberryCreekHOA">Facebook Group</a></li>
           <li><a href="mailto:info@thornberrycreekcommunity.com">Email Us</a></li>
@@ -252,8 +272,8 @@
 
 <script>
   const toggle=document.getElementById('toggle'),menu=document.getElementById('menu');
-  toggle.addEventListener('click',()=>menu.classList.toggle('open'));
-  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',o);});
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>

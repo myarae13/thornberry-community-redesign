@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Thornberry Creek Community Association">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f5d3f"/>
+      <stop offset="1" stop-color="#1f3a2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#tile)"/>
+  <rect x="29.3" y="42.2" width="5.4" height="9" fill="#b88a32"/>
+  <path d="M32 30.4 9.3 46.1h45.4z" fill="#f7f4ec"/>
+  <path d="M32 20.8 13.8 37.4h36.4z" fill="#f7f4ec"/>
+  <path d="M32 9.9 18.2 28.2h27.6z" fill="#f7f4ec"/>
+</svg>

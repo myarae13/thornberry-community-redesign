@@ -1,6 +1,6 @@
 /* ============================================================
-   Thornberry Creek Community Association — shared stylesheet
-   "Editorial Heritage" — pine + gold, Fraunces + Inter
+   Thornberry Creek Community Association, shared stylesheet
+   "Editorial Heritage", pine + gold, Fraunces + Inter
    ============================================================ */
 
 :root{
@@ -171,8 +171,8 @@ section.band{padding:clamp(64px,9vh,116px) 0;position:relative;overflow:hidden}
 /* ---------- CONTACT DIRECTORY ---------- */
 .dir{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
 .dir-group{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:1.7rem 1.8rem}
-.dir-group h3{font-size:1.2rem;margin-bottom:.3rem;display:flex;align-items:center;gap:.6rem}
-.dir-group h3 .ico{color:var(--pine);display:grid;place-items:center}
+.dir-group h2{font-size:1.2rem;margin-bottom:.3rem;display:flex;align-items:center;gap:.6rem}
+.dir-group h2 .ico{color:var(--pine);display:grid;place-items:center}
 .dir-group .sub{font-size:.84rem;color:var(--ink-soft);margin-bottom:1rem}
 .dir-row{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-top:1px solid var(--line);font-size:.93rem}
 .dir-row .label{color:var(--ink-soft)}
@@ -337,7 +337,7 @@ footer .brand span{color:rgba(255,255,255,.65)}
 footer p.about{font-size:.9rem;max-width:34ch;margin-bottom:1rem}
 footer .contact{font-size:.9rem;line-height:2}
 footer .contact a:hover{color:var(--gold-soft)}
-footer h5{color:#fff;font-family:var(--sans);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.1rem}
+footer .foot-h{color:#fff;font-family:var(--sans);font-size:.74rem;font-weight:700;line-height:1.6;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.1rem}
 footer ul{list-style:none}
 footer ul li{margin-bottom:.65rem}
 footer ul a{font-size:.9rem;transition:.2s}
@@ -370,8 +370,8 @@ footer ul a:hover{color:var(--gold-soft)}
 }
 @media(max-width:760px){
   .utility{display:none}
-  .menu{position:fixed;inset:0 0 0 auto;width:min(82vw,330px);background:var(--paper);flex-direction:column;justify-content:center;align-items:flex-start;padding:2.5rem;gap:1.5rem;transform:translateX(100%);transition:.4s ease;box-shadow:-20px 0 60px rgba(0,0,0,.18)}
-  .menu.open{transform:none}
+  .menu{position:fixed;inset:0 0 0 auto;width:min(82vw,330px);background:var(--paper);flex-direction:column;justify-content:center;align-items:flex-start;padding:2.5rem;gap:1.5rem;transform:translateX(100%);visibility:hidden;transition:transform .4s ease,visibility 0s .4s;box-shadow:-20px 0 60px rgba(0,0,0,.18)}
+  .menu.open{transform:none;visibility:visible;transition:transform .4s ease}
   .menu>a{font-size:1.1rem}
   .menu-toggle{display:flex}
   .header-cta .search-ic{display:none}
