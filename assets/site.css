@@ -397,3 +397,15 @@ footer ul a:hover{color:var(--gold-soft)}
   .stats .wrap{grid-template-columns:1fr}
   .stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
 }
+
+/* ---------- TOUCH TARGETS ---------- */
+/* The contacts directory, breadcrumb, and footer links are compact inline text,
+   16 to 21px tall, which is under the 24px WCAG 2.5.8 asks for. On the contacts
+   page that matters: every phone number and email is a tap target, and it is the
+   page most likely opened on a phone. Extending the hit area with a pseudo
+   element buys the height without moving anything on screen. */
+@media(pointer:coarse),(max-width:760px){
+  .dir-row a,.crumb .wrap a,footer ul a,footer .contact a{position:relative}
+  .dir-row a::after,.crumb .wrap a::after{content:"";position:absolute;inset:-7px -6px}
+  footer ul a::after,footer .contact a::after{content:"";position:absolute;inset:-5px -6px}
+}
