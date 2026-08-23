@@ -176,6 +176,13 @@ section.band{padding:clamp(64px,9vh,116px) 0;position:relative;overflow:hidden}
 .dir-group .sub{font-size:.84rem;color:var(--ink-soft);margin-bottom:1rem}
 .dir-row{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-top:1px solid var(--line);font-size:.93rem}
 .dir-row .label{color:var(--ink-soft)}
+/* The general inbox address is 33 unbreakable characters. Without this the row
+   min-content is 391px, which forces .dir-group to 451px and the directory gets
+   clipped by the band's overflow:hidden on any phone. */
+.dir-row .label,.dir-row .val{min-width:0;overflow-wrap:anywhere}
+/* A phone number split across two lines is unreadable, and 911 breaking to
+   "91 / 1" is worse than unreadable. Numbers never break. */
+.dir-row .val a[href^="tel:"],.dir-row.urgent .val{white-space:nowrap}
 .dir-row .val{font-weight:600;text-align:right}
 .dir-row .val a:hover{color:var(--pine)}
 .dir-row.urgent .val{color:#9a3526}
@@ -374,12 +381,17 @@ footer ul a:hover{color:var(--gold-soft)}
   .stat:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
   .dir{grid-template-columns:1fr}
 }
-@media(max-width:760px){
-  .utility{display:none}
+/* The full nav needs 903px. Below that the row overflows and the browser
+   widens the layout viewport, so the drawer has to take over at 940px, not
+   760px, or tablets render the whole page scaled down. */
+@media(max-width:940px){
   .menu{position:fixed;inset:0 0 0 auto;width:min(82vw,330px);background:var(--paper);flex-direction:column;justify-content:center;align-items:flex-start;padding:2.5rem;gap:1.5rem;transform:translateX(100%);visibility:hidden;transition:transform .4s ease,visibility 0s .4s;box-shadow:-20px 0 60px rgba(0,0,0,.18)}
   .menu.open{transform:none;visibility:visible;transition:transform .4s ease}
   .menu>a{font-size:1.1rem}
   .menu-toggle{display:flex}
+}
+@media(max-width:760px){
+  .utility{display:none}
   .header-cta .search-ic{display:none}
   .news-grid,.res-grid,.feat-grid,.people{grid-template-columns:1fr}
   .signup form{grid-template-columns:1fr}
@@ -392,6 +404,12 @@ footer ul a:hover{color:var(--gold-soft)}
   .foot-top{grid-template-columns:1fr}
 }
 @media(max-width:560px){
+  /* Two columns cannot hold a label and a phone number in ~280px. Stacking
+     gives the value the full row, so nothing has to break. */
+  .dir-row{flex-direction:column;align-items:flex-start;gap:.15rem}
+  /* Values that stack, a number above a website, need room for both hit areas
+     to reach 24px without meeting in the middle. */
+  .dir-row .val{text-align:left;line-height:1.85}
   .bento-grid,.gal-grid{grid-template-columns:1fr;grid-auto-rows:200px}
   .tile.big,.tile.wide,.tile.tall,.gtile.big,.gtile.wide,.gtile.tall{grid-column:span 1;grid-row:span 1}
   .stats .wrap{grid-template-columns:1fr}
@@ -408,4 +426,18 @@ footer ul a:hover{color:var(--gold-soft)}
   .dir-row a,.crumb .wrap a,footer ul a,footer .contact a{position:relative}
   .dir-row a::after,.crumb .wrap a::after{content:"";position:absolute;inset:-7px -6px}
   footer ul a::after,footer .contact a::after{content:"";position:absolute;inset:-5px -6px}
+}
+
+/* ---------- MOBILE HEADER FIT ---------- */
+/* The logo is a 1282x294 wordmark. At the desktop height of 58px it renders
+   253px wide, and logo plus CTA plus toggle needs about 458px. On a 375px phone
+   that forced the browser to widen the layout viewport to 476px and scale the
+   whole page down, which clipped content on every page. Scale the wordmark to
+   the viewport so the row fits. */
+@media(max-width:760px){
+  .nav{gap:.55rem}
+  .brand{min-width:0}
+  .logo-img{height:auto;width:auto;max-height:40px;max-width:min(40vw,168px)}
+  .header-cta{gap:.45rem}
+  .header-cta .btn{font-size:.76rem;padding:.66em 1em}
 }
