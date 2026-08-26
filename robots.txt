@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thornberry-community-redesign.vercel.app/sitemap.xml
+Sitemap: https://thornberrycreekcommunity.com/sitemap.xml
