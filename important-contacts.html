@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/site.css" />
+<link rel="stylesheet" href="/assets/site.css" />
 </head>
 <body>
 
@@ -44,7 +44,7 @@
 <header>
   <div class="wrap nav">
     <a href="/" class="brand">
-      <img src="assets/logo.png" alt="Thornberry Creek Community Association" class="logo-img" />
+      <img src="/assets/logo.png" alt="Thornberry Creek Community Association" class="logo-img" />
     </a>
     <nav class="menu" id="menu">
       <a href="/">Home</a>
@@ -161,7 +161,7 @@
 </section>
 
 <div class="streetscape" aria-hidden="true">
-  <img src="assets/footer-streetscape.png" alt="Illustration of Thornberry Creek homes along the golf course" />
+  <img src="/assets/footer-streetscape.png" alt="Illustration of Thornberry Creek homes along the golf course" />
 </div>
 <footer>
   <div class="wrap">
@@ -216,6 +216,6 @@
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
-<script src="assets/contact.js" defer></script>
+<script src="/assets/contact.js" defer></script>
 </body>
 </html>

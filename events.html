@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/site.css" />
+<link rel="stylesheet" href="/assets/site.css" />
 </head>
 <body>
 
@@ -44,7 +44,7 @@
 <header>
   <div class="wrap nav">
     <a href="/" class="brand">
-      <img src="assets/logo.png" alt="Thornberry Creek Community Association" class="logo-img" />
+      <img src="/assets/logo.png" alt="Thornberry Creek Community Association" class="logo-img" />
     </a>
     <nav class="menu" id="menu">
       <a href="/">Home</a>
@@ -62,7 +62,7 @@
 </header>
 
 <section class="page-hero">
-  <img class="bg" src="assets/residents.jpg" alt="Residents gathered at a community event" />
+  <img class="bg" src="/assets/residents.jpg" alt="Residents gathered at a community event" />
   <div class="wrap">
     <span class="eyebrow">What's Happening</span>
     <h1>Community Events Calendar</h1>
@@ -97,7 +97,7 @@
           <p style="font-size:.92rem;color:var(--ink-soft);margin-bottom:.9rem;max-width:54ch">Bring the kids to meet Santa. Details will follow by mail, by flyer, and on the TCCA Facebook group.</p>
           <span class="cost">Families</span>
         </div>
-        <div class="shot"><img src="assets/santa-kids.jpg" alt="Neighbors in reindeer antlers and Santa hats at a Thornberry Creek entrance" /></div>
+        <div class="shot"><img src="/assets/santa-kids.jpg" alt="Neighbors in reindeer antlers and Santa hats at a Thornberry Creek entrance" /></div>
       </div>
     </div>
 
@@ -112,7 +112,7 @@
           <p style="font-size:.92rem;color:var(--ink-soft);margin-bottom:.9rem;max-width:54ch">Members only, adults only. RSVP required, and a supplemental fee applies.</p>
           <span class="cost">Members Only</span>
         </div>
-        <div class="shot"><img src="assets/holiday-party.jpg" alt="A decorated Christmas tree with glass ornaments" /></div>
+        <div class="shot"><img src="/assets/holiday-party.jpg" alt="A decorated Christmas tree with glass ornaments" /></div>
       </div>
     </div>
 
@@ -208,7 +208,7 @@
 </section>
 
 <div class="streetscape" aria-hidden="true">
-  <img src="assets/footer-streetscape.png" alt="Illustration of Thornberry Creek homes along the golf course" />
+  <img src="/assets/footer-streetscape.png" alt="Illustration of Thornberry Creek homes along the golf course" />
 </div>
 <footer>
   <div class="wrap">
@@ -263,6 +263,6 @@
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
-<script src="assets/contact.js" defer></script>
+<script src="/assets/contact.js" defer></script>
 </body>
 </html>
