@@ -188,6 +188,26 @@ section.band{padding:clamp(64px,9vh,116px) 0;position:relative;overflow:hidden}
 .dir-row .val a:hover{color:var(--pine)}
 .dir-row.urgent .val{color:#9a3526}
 
+/* ---------- EMAIL FALLBACK PANEL ---------- */
+/* Shown by contact.js only when a mailto link found no mail program to open,
+   which is the normal state of a desktop where mail is read in a browser tab.
+   Sits above the sticky header, which is z-index 50. */
+.mailto-back{position:fixed;inset:0;z-index:100;background:rgba(20,30,22,.55);display:grid;place-items:center;padding:1.2rem}
+/* display:grid above would beat the hidden attribute's display:none, leaving a
+   closed panel stretched invisibly over the page, eating every click on it. */
+.mailto-back[hidden]{display:none}
+.mailto-panel{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:clamp(1.6rem,4vw,2.2rem);max-width:440px;width:100%;box-shadow:0 30px 70px -30px rgba(20,30,22,.6);text-align:center}
+.mailto-panel h2{font-size:1.5rem;margin-bottom:.7rem}
+.mailto-note{font-size:.9rem;color:var(--ink-soft);margin-bottom:1.2rem}
+/* The address is the point of the panel, and someone may need to read it off
+   the screen to type by hand, so it gets the serif at a comfortable size and
+   breaks rather than overflowing on a narrow phone. */
+.mailto-addr{font-family:var(--serif);font-size:1.05rem;color:var(--pine);font-weight:600;background:var(--cream-2);border-radius:5px;padding:.75rem .8rem;margin-bottom:1.3rem;overflow-wrap:anywhere}
+.mailto-actions{display:flex;flex-direction:column;gap:.6rem}
+.mailto-actions .btn{justify-content:center;white-space:normal}
+.mailto-close{margin-top:1.1rem;background:none;border:0;font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--ink-soft);cursor:pointer;padding:.4rem .8rem;transition:.2s}
+.mailto-close:hover{color:var(--pine)}
+
 /* ---------- GALLERY ---------- */
 .gal-filters{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.4rem}
 .gal-filters button{font-family:var(--sans);font-size:.82rem;font-weight:600;letter-spacing:.02em;padding:.55em 1.1em;border-radius:40px;border:1px solid var(--line);background:var(--white);color:var(--ink-soft);cursor:pointer;transition:.2s}
