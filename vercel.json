@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
   "redirects": [
     {
       "source": "/(.*)",
@@ -7,21 +8,16 @@
       "destination": "https://thornberrycreekcommunity.com/$1",
       "permanent": true
     },
-    { "source": "/about.html", "destination": "/about-us.html", "permanent": true },
-    { "source": "/contacts.html", "destination": "/important-contacts.html", "permanent": true },
-    { "source": "/contact.html", "destination": "/important-contacts.html", "permanent": true },
-    { "source": "/gallery.html", "destination": "/photo-gallery.html", "permanent": true },
-    { "source": "/news.html", "destination": "/events.html", "permanent": true },
+    { "source": "/about.html", "destination": "/about-us", "permanent": true },
+    { "source": "/contacts.html", "destination": "/important-contacts", "permanent": true },
+    { "source": "/contact.html", "destination": "/important-contacts", "permanent": true },
+    { "source": "/gallery.html", "destination": "/photo-gallery", "permanent": true },
+    { "source": "/news.html", "destination": "/events", "permanent": true },
     { "source": "/index-v1.html", "destination": "/", "permanent": true },
-    { "source": "/about", "destination": "/about-us.html", "permanent": true },
-    { "source": "/about-us", "destination": "/about-us.html", "permanent": true },
-    { "source": "/events", "destination": "/events.html", "permanent": true },
-    { "source": "/contacts", "destination": "/important-contacts.html", "permanent": true },
-    { "source": "/important-contacts", "destination": "/important-contacts.html", "permanent": true },
-    { "source": "/photos", "destination": "/photo-gallery.html", "permanent": true },
-    { "source": "/photo-gallery", "destination": "/photo-gallery.html", "permanent": true },
-    { "source": "/gallery", "destination": "/photo-gallery.html", "permanent": true },
-    { "source": "/guiding-principles", "destination": "/guiding-principles.html", "permanent": true }
+    { "source": "/about", "destination": "/about-us", "permanent": true },
+    { "source": "/contacts", "destination": "/important-contacts", "permanent": true },
+    { "source": "/photos", "destination": "/photo-gallery", "permanent": true },
+    { "source": "/gallery", "destination": "/photo-gallery", "permanent": true }
   ],
   "headers": [
     {
