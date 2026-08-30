@@ -202,7 +202,7 @@ section.band{padding:clamp(64px,9vh,116px) 0;position:relative;overflow:hidden}
 /* The address is the point of the panel, and someone may need to read it off
    the screen to type by hand, so it gets the serif at a comfortable size and
    breaks rather than overflowing on a narrow phone. */
-.mailto-addr{font-family:var(--serif);font-size:1.05rem;color:var(--pine);font-weight:600;background:var(--cream-2);border-radius:5px;padding:.75rem .8rem;margin-bottom:1.3rem;overflow-wrap:anywhere}
+.mailto-addr{font-family:var(--serif);font-size:clamp(.9rem,3.4vw,1.05rem);color:var(--pine);font-weight:600;background:var(--cream-2);border-radius:5px;padding:.75rem .8rem;margin-bottom:1.3rem;overflow-wrap:anywhere}
 .mailto-actions{display:flex;flex-direction:column;gap:.6rem}
 .mailto-actions .btn{justify-content:center;white-space:normal}
 .mailto-close{margin-top:1.1rem;background:none;border:0;font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--ink-soft);cursor:pointer;padding:.4rem .8rem;transition:.2s}

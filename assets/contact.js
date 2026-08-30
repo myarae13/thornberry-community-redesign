@@ -45,8 +45,12 @@
     back.innerHTML =
       '<div class="mailto-panel" role="dialog" aria-modal="true" aria-labelledby="mailto-h">' +
         '<h2 id="mailto-h">Email the association</h2>' +
-        '<p class="mailto-note">This computer has no mail program set up, so the link had ' +
-          'nowhere to open. Use the address directly, or open it in webmail.</p>' +
+        // Worded as an offer, not a diagnosis. The panel opens on a guess: the
+        // page still had focus, so probably nothing answered the link. A slow
+        // mail program is the other possibility, and someone whose mail is
+        // opening behind this panel should not be told it does not exist.
+        '<p class="mailto-note">If your mail program did not open, you can use the ' +
+          'address here. Copy it, or start a message in webmail.</p>' +
         '<p class="mailto-addr"><span class="mailto-value"></span></p>' +
         '<div class="mailto-actions">' +
           '<button type="button" class="btn btn-pine mailto-copy">Copy address</button>' +
