@@ -414,6 +414,12 @@ footer ul a:hover{color:var(--gold-soft)}
   /* Values that stack, a number above a website, need room for both hit areas
      to reach 24px without meeting in the middle. */
   .dir-row .val{text-align:left;line-height:1.85}
+  /* The general inbox address is 33 characters and does not fit one line here,
+     so overflow-wrap breaks it and the second line holds only a fragment. An
+     inline anchor wrapped that way is an L, and the empty half of the last line
+     reads as part of the link while tapping there does nothing. As a block the
+     anchor keeps the same two lines and the same look, with a solid hit area. */
+  .dir-row .val a[href^="mailto:"]{display:block}
   .bento-grid,.gal-grid{grid-template-columns:1fr;grid-auto-rows:200px}
   .tile.big,.tile.wide,.tile.tall,.gtile.big,.gtile.wide,.gtile.tall{grid-column:span 1;grid-row:span 1}
   .stats .wrap{grid-template-columns:1fr}
