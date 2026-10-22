@@ -435,6 +435,12 @@ footer ul a:hover{color:var(--gold-soft)}
   /* Two columns cannot hold a label and a phone number in ~280px. Stacking
      gives the value the full row, so nothing has to break. */
   .dir-row{flex-direction:column;align-items:flex-start;gap:.15rem}
+  /* The inbox address needs about 285px. With desktop side padding it missed
+     by a few pixels on 360 to 375px phones and broke as "co / m". Questions
+     move with their answers so the two stay aligned. */
+  .callout{padding:1.2rem 1rem}
+  .faq summary{padding:1.15rem 1rem}
+  .faq .ans{padding:0 1rem 1.3rem}
   /* Values that stack, a number above a website, need room for both hit areas
      to reach 24px without meeting in the middle. */
   .dir-row .val{text-align:left;line-height:1.85}
@@ -448,6 +454,11 @@ footer ul a:hover{color:var(--gold-soft)}
   .tile.big,.tile.wide,.tile.tall,.gtile.big,.gtile.wide,.gtile.tall{grid-column:span 1;grid-row:span 1}
   .stats .wrap{grid-template-columns:1fr}
   .stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
+}
+@media(max-width:400px){
+  /* At 360px the address plus its trailing period is still a few pixels too
+     wide and splits as "co / m". A slightly smaller address keeps it whole. */
+  .callout a[href^="mailto:"],.faq .ans a[href^="mailto:"]{font-size:.92em}
 }
 
 /* ---------- TOUCH TARGETS ---------- */
