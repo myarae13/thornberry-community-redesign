@@ -61,7 +61,7 @@ header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1p
 .logo-img{height:58px;width:auto;display:block}
 .brand .mark{width:46px;height:46px;border:1.5px solid var(--pine);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--pine)}
 .brand b{font-family:var(--serif);font-weight:600;font-size:1.16rem;color:var(--ink);line-height:1.05;display:block;letter-spacing:0}
-.brand span{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.brand span{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
 .menu{display:flex;gap:1.9rem;align-items:center}
 .menu>a{font-size:.9rem;font-weight:500;color:var(--ink);padding:.4rem 0;position:relative;transition:.2s}
 .menu>a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:.25s}
