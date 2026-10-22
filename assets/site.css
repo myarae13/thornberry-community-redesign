@@ -132,6 +132,9 @@ section.band{padding:clamp(64px,9vh,116px) 0;position:relative;overflow:hidden}
 .callout{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:1.4rem 1.6rem;margin:1.8rem 0}
 .callout p{margin:0;color:var(--ink-soft);font-size:.98rem}
 .callout strong{color:var(--ink)}
+/* The 33-character inbox address is wider than a 320px phone's text column.
+   body hides horizontal overflow, so unbroken it was clipped at the edge. */
+.prose,.callout,.faq .ans{overflow-wrap:break-word}
 
 /* ---------- TWO-COLUMN SPLIT ---------- */
 .split{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
